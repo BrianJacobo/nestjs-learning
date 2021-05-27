@@ -1,0 +1,38 @@
+./dist
+compilado de nuestro archivo ts, ya que nodejs y el navegador entienden JS
+esto es lo que se publica a produccion
+
+./node_modules
+dependencias de desarrollo y produccion
+
+---en el package.json---
+jest sirve para hacer el test, oficial de nest
+./src
+./tes
+pruebas end to end
+pruebas de nuestros endpoints
+
+.nest-cli.json
+conf de nuestro proyecto
+
+.tsconfig.build.json
+archivo que hace la conf de TS
+outDir-->./dist "donde esta el codigo transpilado"
+
+controlador
+recibe peticion get/post/..
+solicita inf a un servicio(service)
+
+
+service
+aca encontraremos toda la logica del negocio
+validaciones, calculos,etc
+necesita ayuda de logica bd(example)repositorio
+
+todo debe estar en un module
+
+CASE-example
+el cliente hace (GET/POST) al servidor
+dentro del servidor tenemos a MODULE
+dentro de MODULE está el controlador quien recibe estas peticiones
+el controlador usa el servio y el servicio le responde

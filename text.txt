@@ -1,33 +1,72 @@
-./dist
-compilado de nuestro archivo ts, ya que nodejs y el navegador entienden JS
-esto es lo que se publica a produccion
+-------/dist---------------
+transplado/compilado de nuestro archivo ts, ya que nodejs y el navegador entienden JS
+esto es lo que se publica a producción
 
 ./node_modules
-dependencias de desarrollo y produccion
+dependencias de desarrollo y producción
 
----en el package.json---
+************************************
+---en el package.json--------
 jest sirve para hacer el test, oficial de nest
-./src
-./tes
+---en el package-lock.json---
+seguridad del package.json
+*************************************
+
+-------./tes-------------------
 pruebas end to end
 pruebas de nuestros endpoints
 
-.nest-cli.json
+-------./prettierc--------------
+confg de prettier
+
+-------.nest-cli.json------------
 conf de nuestro proyecto
 
-.tsconfig.build.json
+-------.tsconfig.build.json------
 archivo que hace la conf de TS
 outDir-->./dist "donde esta el codigo transpilado"
 
-controlador
+-------.tslint.json--------------
+serie de reglas y standares para nuestro código
+
+
+*******./src****************
+MIDDLEWARE?capa que valida que el request sea válido
+--->Un middleware es un bloque de código que se ejecuta
+    entre la petición que hace el usuario (request) hasta
+    que la petición llega al servidor.
+
+------APP MODULE---------------
+es el repositorio principal
+donde se alamacenan los serivicios, repositorios, guards, pipes,etc
+
+./src/controlller.spec
+es el unit test del controlller
+
+
+-------./src/controlller--------
+importa decoradores(controller,get,...) de @nestjs/common
+importa AppSercice de ./app.service
+dentro un constructor recibe como dependencia a un servicio
 recibe peticion get/post/..
 solicita inf a un servicio(service)
+en este caso la funcion getHello() String
 
 
-service
+-------./src/service--------
 aca encontraremos toda la logica del negocio
 validaciones, calculos,etc
 necesita ayuda de logica bd(example)repositorio
+
+
+-------./src/module--------
+crea un clase indicanco los imports, controlllers, providers
+controllers---cuales son los controladores(enrutadores) que tendrá nuestra app
+providers-----proveer a otros modulos los servicios(ejemplo) que queramos compartir
+
+-------./src/main--------
+hay una funcion asincrona
+crear instancia de apliacion(express)
 
 todo debe estar en un module
 
@@ -36,3 +75,5 @@ el cliente hace (GET/POST) al servidor
 dentro del servidor tenemos a MODULE
 dentro de MODULE está el controlador quien recibe estas peticiones
 el controlador usa el servio y el servicio le responde
+-------------------------------------------------------------------------------------
+PROVIDER
